@@ -28,7 +28,7 @@ Setup:
 
 The problem goes away if you do any of the following:
 
-* Use Django 1.7.8
+* Use Django 1.7.8 (problem seen with all released versions of 1.8 so far)
 * Remove the `help_text` parameter
 * Use a non-empty `help_text`
 * Don't internationalise the `help_text` parameter
