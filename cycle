@@ -1,0 +1,18 @@
+#!/usr/bin/zsh
+
+echo "Cleaning"
+
+rm -f db.sqlite3
+rm -rf myapp/migrations
+
+echo "Making and applying first set of migrations"
+
+python manage.py makemigrations myapp
+python manage.py migrate
+python manage.py migrate -l
+
+echo ""
+read \?"Hit return to check for second set of migrations"
+echo ""
+
+python manage.py makemigrations --dry-run
