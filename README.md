@@ -1,6 +1,6 @@
 # django-ugettext_lazy_migrations
 
-This repository demonstrates a strange behaviour (bug?) in Django 1.8, where any model field with a `help_string` of `ugettext_lazy('')` causes infinite migrations to be produced my `makemigrations`.
+This repository demonstrates a strange behaviour (bug?) in Django 1.8, where any model field with a `help_string` of `ugettext_lazy('')` causes infinite migrations to be produced by `makemigrations`.
 
 In `myapp/model.py`, we have:
 
@@ -28,8 +28,8 @@ Setup:
 
 The problem goes away if you do any of the following:
 
-* Use Django 1.7.8 (problem seen with all released versions of 1.8 so far)
-* Remove the `help_text` parameter
-* Use a non-empty `help_text`
-* Don't internationalise the `help_text` parameter
-* Use `ugettext` instead of `ugettext_lazy` (which you [shouldn't](https://docs.djangoproject.com/en/1.8/topics/i18n/translation/#lazy-translations))
+* Use Django 1.7.8 (whereas all 1.8.x versions up to latest (1.8.2) exhibit the problem).
+* Remove the `help_text` parameter.
+* Use a non-empty `help_text`.
+* Don't internationalise the `help_text` parameter.
+* Use `ugettext` instead of `ugettext_lazy` (which you [shouldn't](https://docs.djangoproject.com/en/1.8/topics/i18n/translation/#lazy-translations)).
